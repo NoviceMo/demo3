@@ -5,6 +5,7 @@
     <title>吉他谱</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	  <script src="https://novicemo.github.io/demo3/js/jquery-2.1.0.min.js"></script>
+	  <link rel="stylesheet" href="https://novicemo.github.io/demo3/css/size.css">
   </head>
   <body>
 <script type="text/javascript">
@@ -12,8 +13,7 @@
 			function go() {
 			
         var musicName = document.getElementById("music").value;
-        var imgs = document.getElementsByTagName("img");
-					
+        var imgs = document.getElementsByTagName("img");	
 		var musicName = document.getElementById("music").value;
 		var source = "/demo3/img/"+musicName;
 		if(window.ActiveXObject){
@@ -21,21 +21,20 @@
 			}else if(window.XMLHttpRequest){
 			var xmlhttp =  new XMLHttpRequest();
 		}
-		alert(source+"/1.jpg");
+		
 		var flag = true;
 		if(flag){
-		alert("tttttt");
+		
 		xmlhttp.open("GET",source+"/1.jpg",false);//判断jpg
 		xmlhttp.send();
 		if(xmlhttp.readyState==4){
-		alert("4");
+		
 			if(xmlhttp.status==200){
-					alert("jpg 200");
+					
 					flag = false;
 					imgs[0].src="img/"+musicName+"/1.jpg";
-					alert("203");
+					
 					imgs[1].src="img/"+musicName+"/2.jpg";
-					alert("203 2");
 					imgs[2].src="img/"+musicName+"/3.jpg";
 					return;
 			}
@@ -43,23 +42,21 @@
 		xmlhttp.open("GET",source+"/1.png",false);//判断png
 		xmlhttp.send();
 		if(xmlhttp.readyState==4){
-				alert("4");
+				
 			if(xmlhttp.status==200){
-					alert("jpg 200");
+					
 					flag = false;
 					imgs[0].src="img/"+musicName+"/1.png";
 					imgs[1].src="img/"+musicName+"/2.png";
 					imgs[2].src="img/"+musicName+"/3.png";
 					return;
-			}else{
-				alert("404");
 			}
 		}}else if(flag){
 		xmlhttp.open("GET",source+"/1.gif",false);//判断gif
 		xmlhttp.send();
 		if(xmlhttp.readyState==4){
 			if(xmlhttp.status==200){
-					alert("jpg");
+				
 					flag = false;
 					imgs[0].src="img/"+musicName+"/1.gif";
 					imgs[1].src="img/"+musicName+"/2.gif";
