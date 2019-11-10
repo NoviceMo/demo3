@@ -22,24 +22,27 @@
 			var xmlhttp =  new XMLHttpRequest();
 		}
 		alert(source+"/1.jpg");
-		if{
+		var flag = true;
+		if(flag){
 		xmlhttp.open("GET",source+"/1.jpg",true);//判断jpg
 		xmlhttp.send();
 		if(xmlhttp.readyState==4){
 			if(xmlhttp.status==200){
 					alert("jpg");
+					flag = false;
 					imgs[0].src="demo3/img/"+musicName+"/1.jpg";
 					imgs[1].src="demo3/img/"+musicName+"/2.jpg";
 					imgs[2].src="demo3/img/"+musicName+"/3.jpg";
 					return;
 			}
-		}}else if{
+		}}else if(flag){
 		xmlhttp.open("GET",source+"/1.png",true);//判断png
 		xmlhttp.send();
 		if(xmlhttp.readyState==4){
 				alert("4");
 			if(xmlhttp.status==200){
 					alert("jpg 200");
+					flag = false;
 					imgs[0].src="demo3/img/"+musicName+"/1.png";
 					imgs[1].src="demo3/img/"+musicName+"/2.png";
 					imgs[2].src="demo3/img/"+musicName+"/3.png";
@@ -47,12 +50,13 @@
 			}else{
 				alert("404");
 			}
-		}}else if{
+		}}else if(flag){
 		xmlhttp.open("GET",source+"/1.gif",true);//判断gif
 		xmlhttp.send();
 		if(xmlhttp.readyState==4){
 			if(xmlhttp.status==200){
 					alert("jpg");
+					flag = false;
 					imgs[0].src="demo3/img/"+musicName+"/1.gif";
 					imgs[1].src="demo3/img/"+musicName+"/2.gif";
 					imgs[2].src="demo3/img/"+musicName+"/3.gif";
