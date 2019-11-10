@@ -23,6 +23,7 @@
 		}
 		alert(source+"/1.jpg");
 		xmlhttp.open("GET",source+"/1.jpg",true);//判断jpg
+		xmlhttp.send();
 		alert("test");
 		if(xmlhttp.readyState==4){
 			if(xmlhttp.status==200){
@@ -34,6 +35,7 @@
 			}
 		}
 		xmlhttp.open("GET",source+"/1.png",false);//判断png
+		xmlhttp.send();
 		if(xmlhttp.readyState==4){
 				alert("4");
 			if(xmlhttp.status==200){
@@ -47,6 +49,7 @@
 			}
 		}
 		xmlhttp.open("GET",source+"/1.gif",false);//判断gif
+		xmlhttp.send();
 		if(xmlhttp.readyState==4){
 			if(xmlhttp.status==200){
 					alert("jpg");
