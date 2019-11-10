@@ -4,7 +4,7 @@
   <head>
     <title>吉他谱</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+	  <script src="https://novicemo.github.io/demo3/demo3/js/jquery-2.1.0.min.js"></script>
   </head>
   <body>
 <script type="text/javascript">
@@ -31,9 +31,9 @@
 		if(xmlhttp.readyState==4){
 			if(xmlhttp.status==200){
 					alert("jpg");
-					imgs[0].src="img/"+musicName+"/1.jpg";
-					imgs[1].src="img/"+musicName+"/2.jpg";
-					imgs[2].src="img/"+musicName+"/3.jpg";
+					imgs[0].src=source+musicName+"/1.jpg";
+					imgs[1].src=source+musicName+"/2.jpg";
+					imgs[2].src=source+musicName+"/3.jpg";
 					return;
 			}
 		}
