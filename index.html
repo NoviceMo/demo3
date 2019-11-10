@@ -34,7 +34,7 @@
 					return;
 			}
 		}
-		xmlhttp.open("GET",source+"/1.png",false);//判断png
+		xmlhttp.open("GET",source+"/1.png",true);//判断png
 		xmlhttp.send();
 		if(xmlhttp.readyState==4){
 				alert("4");
@@ -48,7 +48,7 @@
 				alert("404");
 			}
 		}
-		xmlhttp.open("GET",source+"/1.gif",false);//判断gif
+		xmlhttp.open("GET",source+"/1.gif",true);//判断gif
 		xmlhttp.send();
 		if(xmlhttp.readyState==4){
 			if(xmlhttp.status==200){
