@@ -16,8 +16,19 @@
         var imgs = document.getElementsByTagName("img");
 		var musicName = document.getElementById("music").value;
 		var source = "https://novicemo.github.io/demo3/img"+musicName;
-		//var xmlhttp =new ActiveXObject("Microsoft.XMLHTTP");
-		var xmlhttp = new XMLHttpRequest();
+		if(window.ActiveXObject){
+		var xmlhttp =new ActiveXObject("Microsoft.XMLHTTP");
+			alert("支持");
+		}else{
+		alert("不支持");
+		}
+		if(window.XMLHttpRequest){
+		alert("支持");
+			var xmlhttp =  new XMLHttpRequest();
+		}else{
+			alert("不支持");
+		}
+		alert(source+"/1.jpg");
 		xmlhttp.open("GET",source+"/1.jpg",false);//判断jpg
 		if(xmlhttp.readyState==4){
 			if(xmlhttp.status==200){
