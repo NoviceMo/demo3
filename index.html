@@ -22,9 +22,9 @@
 			var xmlhttp =  new XMLHttpRequest();
 		}
 		alert(source+"/1.jpg");
+		if{
 		xmlhttp.open("GET",source+"/1.jpg",true);//判断jpg
 		xmlhttp.send();
-		alert("test");
 		if(xmlhttp.readyState==4){
 			if(xmlhttp.status==200){
 					alert("jpg");
@@ -33,7 +33,7 @@
 					imgs[2].src="demo3/img/"+musicName+"/3.jpg";
 					return;
 			}
-		}
+		}}else if{
 		xmlhttp.open("GET",source+"/1.png",true);//判断png
 		xmlhttp.send();
 		if(xmlhttp.readyState==4){
@@ -47,7 +47,7 @@
 			}else{
 				alert("404");
 			}
-		}
+		}}else if{
 		xmlhttp.open("GET",source+"/1.gif",true);//判断gif
 		xmlhttp.send();
 		if(xmlhttp.readyState==4){
@@ -58,7 +58,7 @@
 					imgs[2].src="demo3/img/"+musicName+"/3.gif";
 					return;
 			}
-		}
+		}}
 	}
 </script>
   <div id="all">
