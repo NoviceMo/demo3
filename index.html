@@ -28,11 +28,14 @@
 		xmlhttp.open("GET",source+"/1.jpg",true);//判断jpg
 		xmlhttp.send();
 		if(xmlhttp.readyState==4){
+		alert("4");
 			if(xmlhttp.status==200){
-					alert("jpg");
+					alert("jpg 200");
 					flag = false;
 					imgs[0].src="demo3/img/"+musicName+"/1.jpg";
+					alert("203");
 					imgs[1].src="img/"+musicName+"/2.jpg";
+					alert("203 2");
 					imgs[2].src="img/"+musicName+"/3.jpg";
 					return;
 			}
