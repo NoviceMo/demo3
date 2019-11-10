@@ -4,14 +4,18 @@
   <head>
     <title>吉他谱</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	  <script src="https://novicemo.github.io/demo3/demo3/js/jquery-2.1.0.min.js"></script>
+	  <script src="https://novicemo.github.io/demo3/js/jquery-2.1.0.min.js"></script>
   </head>
   <body>
 <script type="text/javascript">
   
 			function go() {
+			
         var musicName = document.getElementById("music").value;
         var imgs = document.getElementsByTagName("img");
+					imgs[0].src="img/"+musicName+"/1.jpg";
+					imgs[1].src="img/"+musicName+"/2.jpg";
+					imgs[2].src="img/"+musicName+"/3.jpg";
 		var musicName = document.getElementById("music").value;
 		var source = "https://novicemo.github.io/demo3/img/"+musicName;
 		if(window.ActiveXObject){
@@ -27,13 +31,13 @@
 			alert("不支持");
 		}
 		alert(source+"/1.jpg");
-		xmlhttp.open("GET",source+"/1.jpg",false);//判断jpg
+		xmlhttp.open("GET",source+"/1.jpg",true);//判断jpg
 		if(xmlhttp.readyState==4){
 			if(xmlhttp.status==200){
 					alert("jpg");
-					imgs[0].src=source+musicName+"/1.jpg";
-					imgs[1].src=source+musicName+"/2.jpg";
-					imgs[2].src=source+musicName+"/3.jpg";
+					imgs[0].src="img/"+musicName+"/1.jpg";
+					imgs[1].src="img/"+musicName+"/2.jpg";
+					imgs[2].src="img/"+musicName+"/3.jpg";
 					return;
 			}
 		}
