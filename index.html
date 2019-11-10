@@ -35,12 +35,15 @@
 		}
 		xmlhttp.open("GET",source+"/1.png",false);//判断png
 		if(xmlhttp.readyState==4){
+				alert("4");
 			if(xmlhttp.status==200){
-					alert("jpg");
+					alert("jpg 200");
 					imgs[0].src="img/"+musicName+"/1.png";
 					imgs[1].src="img/"+musicName+"/2.png";
 					imgs[2].src="img/"+musicName+"/3.png";
 					return;
+			}else{
+				alert("404");
 			}
 		}
 		xmlhttp.open("GET",source+"/1.gif",false);//判断gif
