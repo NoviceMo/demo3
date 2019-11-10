@@ -13,22 +13,14 @@
 			
         var musicName = document.getElementById("music").value;
         var imgs = document.getElementsByTagName("img");
-					imgs[0].src="img/"+musicName+"/1.jpg";
-					imgs[1].src="img/"+musicName+"/2.jpg";
-					imgs[2].src="img/"+musicName+"/3.jpg";
+					
 		var musicName = document.getElementById("music").value;
-		var source = "https://novicemo.github.io/demo3/img/"+musicName;
+		var source = "/img/"+musicName;
 		if(window.ActiveXObject){
 		var xmlhttp =new ActiveXObject("Microsoft.XMLHTTP");
-			alert("支持");
-		}else{
-		alert("不支持");
-		}
-		if(window.XMLHttpRequest){
-		alert("支持");
+			}
+		}else if(window.XMLHttpRequest){
 			var xmlhttp =  new XMLHttpRequest();
-		}else{
-			alert("不支持");
 		}
 		alert(source+"/1.jpg");
 		xmlhttp.open("GET",source+"/1.jpg",true);//判断jpg
