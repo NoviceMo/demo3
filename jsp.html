@@ -4,16 +4,8 @@
   <head>
     <title>吉他谱</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="css/size.css">
-      <style>
-          #music{
-              height: 30px;
-              width: 400px;
-          }
-          #all{
-              text-align: center;
-          }
-      </style>
+    
+    
 	  <script src="/demo3/js/jquery-2.1.0.min.js"></script>
   </head>
   <body>
@@ -22,20 +14,39 @@
 			function go() {
         var musicName = document.getElementById("music").value;
         var imgs = document.getElementsByTagName("img");
-		imgs[0].src="img/"+musicName+"/1.jpg";
-		imgs[1].src="img/"+musicName+"/2.jpg";
-		imgs[2].src="img/"+musicName+"/3.jpg";
 		var musicName = document.getElementById("music").value;
-
-		var source = "https://novicemo.github.io/demo3/img";
-		alert(source);
-		var objFSO =new ActiveXObject('Scripting.FileSystemObject');
-		
-		var objFolder = objFSO.GetFolder(source);
-		alert(objFolder);
-		alert(objFolder.GetBaseName(source));
-		var colFiles = new Enumrator(objFolder.Files);
-		alert(colFiles.item().Name);
+		var source = "https://novicemo.github.io/demo3/img"+musicName;
+		var xmlhttp =new ActiveXObject("Microsoft.XMLHTTP");
+		xmlhttp.open("GET",source+"/1.jpg",false);//判断jpg
+		if(xmlhttp.readyState==4){
+			if(xmlhttp.status==200){
+					alert("jpg");
+					imgs[0].src="img/"+musicName+"/1.jpg";
+					imgs[1].src="img/"+musicName+"/2.jpg";
+					imgs[2].src="img/"+musicName+"/3.jpg";
+					return;
+			}
+		}
+		xmlhttp.open("GET",source+"/1.png",false);//判断png
+		if(xmlhttp.readyState==4){
+			if(xmlhttp.status==200){
+					alert("jpg");
+					imgs[0].src="img/"+musicName+"/1.png";
+					imgs[1].src="img/"+musicName+"/2.png";
+					imgs[2].src="img/"+musicName+"/3.png";
+					return;
+			}
+		}
+		xmlhttp.open("GET",source+"/1.gif",false);//判断gif
+		if(xmlhttp.readyState==4){
+			if(xmlhttp.status==200){
+					alert("jpg");
+					imgs[0].src="img/"+musicName+"/1.gif";
+					imgs[1].src="img/"+musicName+"/2.gif";
+					imgs[2].src="img/"+musicName+"/3.gif";
+					return;
+			}
+		}
 	}
 </script>
   <div id="all">
