@@ -1,8 +1,9 @@
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <html>
   <head>
     <title>吉他谱</title>
-	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="css/size.css">
       <style>
           #music{
@@ -17,23 +18,32 @@
   </head>
   <body>
 <script type="text/javascript">
-    function go() {
+  
+			function go() {
         var musicName = document.getElementById("music").value;
         var imgs = document.getElementsByTagName("img");
 		imgs[0].src="img/"+musicName+"/1.jpg";
 		imgs[1].src="img/"+musicName+"/2.jpg";
 		imgs[2].src="img/"+musicName+"/3.jpg";
-       // for (var i = 1;i++;i<imgs.length){
-           // imgs[i-2].src="img/"+musicName+"/"+(i-1)+".jpg";
-      //  }
-    }
+		var musicName = document.getElementById("music").value;
+
+		var source = "https://novicemo.github.io/demo3/img";
+		alert(source);
+		var objFSO =new ActiveXObject('Scripting.FileSystemObject');
+		
+		var objFolder = objFSO.GetFolder(source);
+		alert(objFolder);
+		alert(objFolder.GetBaseName(source));
+		var colFiles = new Enumrator(objFolder.Files);
+		alert(colFiles.item().Name);
+	}
 </script>
   <div id="all">
       <input id="music" type="text" placeholder="请输入歌名">
       <input id="<button disabled></button>" type="button" onclick="go();" value="搜索" />
   </div>
   <div id="img">
-    <img src="" alt="" >
+    <img src="https://novicemo.github.io/demo3/img/203/1.jpg" alt="" >
     <img src="" alt="" >
     <img src="" alt="" >
   </div>
